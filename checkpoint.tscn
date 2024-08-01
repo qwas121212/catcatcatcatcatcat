@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc8o4xd2bnvuw"]
+
+[ext_resource type="Texture2D" uid="uid://nl4bbcikuk1p" path="res://Checkpoint (No Flag).png" id="1_vqya0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbssy"]
+size = Vector2(27, 137)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(121, -60)
+scale = Vector2(4.42188, 2.875)
+texture = ExtResource("1_vqya0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(83.5, -35.5)
+shape = SubResource("RectangleShape2D_gbssy")

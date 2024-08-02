@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf2didpcdo0tu"]
+[gd_scene load_steps=13 format=3 uid="uid://ds3qfqhkv18xv"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_2xvmq"]
+[ext_resource type="Script" path="res://Game Manager.gd" id="1_p54pk"]
 [ext_resource type="Texture2D" uid="uid://3fjxsnfajld2" path="res://Pink.png" id="1_yovmj"]
-[ext_resource type="PackedScene" uid="uid://cn06d664ib2mc" path="res://maincharacter.tscn" id="2_s1bv4"]
+[ext_resource type="PackedScene" uid="uid://cypu66hrqqkex" path="res://maincharacter.tscn" id="2_s1bv4"]
 [ext_resource type="Script" path="res://maincharacter.gd" id="3_h57qk"]
 [ext_resource type="Texture2D" uid="uid://ka58ggjf3rri" path="res://Terrain (16x16).png" id="4_lwqhf"]
-[ext_resource type="PackedScene" uid="uid://dc8o4xd2bnvuw" path="res://checkpoint.tscn" id="5_rysyd"]
+[ext_resource type="PackedScene" uid="uid://rhdnte10h5yi" path="res://checkpoint.tscn" id="5_rysyd"]
 [ext_resource type="Script" path="res://checkpoint.gd" id="6_xq37d"]
+[ext_resource type="Script" path="res://Area2D.gd" id="7_ocrpn"]
+[ext_resource type="PackedScene" uid="uid://dgmhsiqxbwgtd" path="res://collectable_powerup.tscn" id="9_0w3ad"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qp0o"]
 texture = ExtResource("4_lwqhf")
@@ -578,8 +580,14 @@ texture = ExtResource("4_lwqhf")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5qp0o")
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_2xvmq")
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_adgfu"]
+distance = -39.0
+
+[node name="Node" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_p54pk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -590,11 +598,11 @@ offset_bottom = 660.0
 texture = ExtResource("1_yovmj")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_s1bv4")]
-position = Vector2(-117, -11)
+position = Vector2(-113, 23)
 script = ExtResource("3_h57qk")
 
 [node name="Timer" type="Timer" parent="CharacterBody2D"]
-one_shot = true
+wait_time = 3.0
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
@@ -607,4 +615,37 @@ layer_0/tile_data = PackedInt32Array(458752, 458752, 0, 458753, 458752, 0, 45875
 position = Vector2(2202, 384)
 script = ExtResource("6_xq37d")
 
+[node name="world_boundary" type="Area2D" parent="."]
+position = Vector2(1072, 699)
+script = ExtResource("7_ocrpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world_boundary"]
+position = Vector2(-3, -45)
+shape = SubResource("WorldBoundaryShape2D_adgfu")
+
+[node name="collectables" type="Node" parent="."]
+
+[node name="collectable_powerup" parent="collectables" instance=ExtResource("9_0w3ad")]
+position = Vector2(707, 58)
+
+[node name="collectable_powerup7" parent="collectables" instance=ExtResource("9_0w3ad")]
+position = Vector2(-1167, 126)
+
+[node name="collectable_powerup6" parent="collectables" instance=ExtResource("9_0w3ad")]
+position = Vector2(-904, 78)
+
+[node name="collectable_powerup2" parent="collectables" instance=ExtResource("9_0w3ad")]
+position = Vector2(-335, 37)
+
+[node name="collectable_powerup5" parent="collectables" instance=ExtResource("9_0w3ad")]
+position = Vector2(-1287, -85)
+
+[node name="collectable_powerup3" parent="collectables" instance=ExtResource("9_0w3ad")]
+position = Vector2(-187, 204)
+
+[node name="collectable_powerup4" parent="collectables" instance=ExtResource("9_0w3ad")]
+position = Vector2(361, -125)
+
 [connection signal="timeout" from="CharacterBody2D/Timer" to="CharacterBody2D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="checkpoint" to="checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="world_boundary" to="world_boundary" method="_on_body_entered"]

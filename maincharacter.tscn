@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cn06d664ib2mc"]
+[gd_scene load_steps=30 format=3 uid="uid://cypu66hrqqkex"]
 
 [ext_resource type="Texture2D" uid="uid://bdod4sbdxxo2t" path="res://Idle (32x32).png" id="1_c5irv"]
 [ext_resource type="Texture2D" uid="uid://dcbwu4gwg5ia6" path="res://Jump (32x32).png" id="2_cnlix"]

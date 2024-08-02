@@ -43,17 +43,16 @@ func _physics_process(delta):
 		jump_count += 1
 		
 	#Handle dash
-	if Input.is_action_just_pressed("dash") and dash_count < max_dashes:
+	if Input.is_action_just_pressed("dash") and dash_count < 4:
 		velocity.x = DASH_VELOCITY
 		dash_count += 1
 		
-	if Input.is_action_just_pressed("dash") and dash_count == max_dashes and not is_on_floor():
+	if Input.is_action_just_pressed("dash") and dash_count < 4  and not is_on_floor():
 		velocity.x = DASH_VELOCITY
 		dash_count += 1
 		
-	if dash_count == max_dashes:
+	if dash_count == 3:
 		timer.start()
-		
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -70,4 +69,5 @@ func _physics_process(delta):
 
 
 func _on_timer_timeout():
+	print_debug("time")
 	dash_count = 0

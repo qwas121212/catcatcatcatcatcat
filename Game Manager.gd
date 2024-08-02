@@ -1,7 +1,6 @@
 extends Node
-@onready var points_label = %PointsLabel
+@onready var pointslabel = %pointslabel
 @export var hearts : Array[Node]
-
 
 var points = 0
 var lives = 3
@@ -20,4 +19,4 @@ func decrease_health():
 func add_point():
 	points += 1
 	print(points)
-	points_label.text = "Points: " + str(points)
+	pointslabel.text = "Points: " + str(points)

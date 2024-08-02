@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0
-const JUMP_VELOCITY_HIGHER = -400.0
+const JUMP_VELOCITY_HIGHER = -600.0
 const DASH_VELOCITY = 3000.0
 #jump count
 var jump_count = 0
@@ -17,6 +17,13 @@ var max_dashes = 3
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var timer = $Timer
 
+func jumpp():
+	velocity.y = JUMP_VELOCITY
+	
+func jump_side(x):
+	velocity.y = JUMP_VELOCITY
+	velocity.x = x
+	
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
@@ -34,6 +41,7 @@ func _physics_process(delta):
 		jump_count = 0
 
 	# Handle jump.
+
 	
 	if Input.is_action_just_pressed("ui_accept") and jump_count > 1 and jump_count < max_jumps:
 		velocity.y = JUMP_VELOCITY_HIGHER 
@@ -43,9 +51,6 @@ func _physics_process(delta):
 		jump_count += 1
 		
 	#Handle dash
-	if Input.is_action_just_pressed("dash") and dash_count < 4:
-		velocity.x = DASH_VELOCITY
-		dash_count += 1
 		
 	if Input.is_action_just_pressed("dash") and dash_count < 4  and not is_on_floor():
 		velocity.x = DASH_VELOCITY

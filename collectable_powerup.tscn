@@ -131,19 +131,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aa08w"]
-radius = 14.0357
+radius = 20.025
 
 [node name="collectable_powerup" type="Area2D"]
 script = ExtResource("1_asauy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1466, 251.5)
-scale = Vector2(1.75, 1.59375)
+position = Vector2(1510, 282)
+scale = Vector2(2.65625, 2.28125)
 sprite_frames = SubResource("SpriteFrames_c14nb")
+autoplay = "default"
+frame_progress = 0.746776
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1466, 252)
+position = Vector2(1509, 284)
 shape = SubResource("CircleShape2D_aa08w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

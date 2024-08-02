@@ -200,7 +200,6 @@ texture_filter = 1
 position = Vector2(154.5, 168.5)
 scale = Vector2(2.65625, 3.09375)
 sprite_frames = SubResource("SpriteFrames_wgiyx")
-animation = &"running"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -208,3 +207,4 @@ position = Vector2(154, 179)
 shape = SubResource("RectangleShape2D_mjihn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

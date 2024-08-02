@@ -661,7 +661,7 @@ offset_bottom = 647.0
 texture = ExtResource("1_yovmj")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_s1bv4")]
-position = Vector2(-113, 3)
+position = Vector2(-96, 11)
 script = ExtResource("3_h57qk")
 
 [node name="Timer" type="Timer" parent="CharacterBody2D"]
@@ -694,30 +694,30 @@ position = Vector2(707, 58)
 position = Vector2(-1167, 126)
 
 [node name="collectable_powerup6" parent="collectables" instance=ExtResource("9_0w3ad")]
-position = Vector2(-904, 78)
+position = Vector2(-939, 57)
 
 [node name="collectable_powerup2" parent="collectables" instance=ExtResource("9_0w3ad")]
-position = Vector2(-335, 37)
+position = Vector2(-340, 10)
 
 [node name="collectable_powerup5" parent="collectables" instance=ExtResource("9_0w3ad")]
 position = Vector2(-1287, -85)
 
 [node name="collectable_powerup3" parent="collectables" instance=ExtResource("9_0w3ad")]
-position = Vector2(-187, 204)
+position = Vector2(-185, 167)
 
 [node name="collectable_powerup4" parent="collectables" instance=ExtResource("9_0w3ad")]
-position = Vector2(361, -125)
+position = Vector2(324, -179)
 
 [node name="enemies" type="Node" parent="."]
 
 [node name="RigidBody2D" parent="enemies" instance=ExtResource("10_kshu3")]
-position = Vector2(746, 333)
+position = Vector2(743, 271)
 
 [node name="RigidBody2D2" parent="enemies" instance=ExtResource("10_kshu3")]
-position = Vector2(1974, 298)
+position = Vector2(1957, 242)
 
 [node name="RigidBody2D3" parent="enemies" instance=ExtResource("10_kshu3")]
-position = Vector2(231, 556)
+position = Vector2(218, 499)
 
 [connection signal="timeout" from="CharacterBody2D/Timer" to="CharacterBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="checkpoint" to="checkpoint" method="_on_body_entered"]

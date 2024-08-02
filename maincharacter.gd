@@ -3,11 +3,10 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0
-const JUMP_VELOCITY_HIGHER = -600.0
+const JUMP_VELOCITY_HIGHER = -500.0
 const DASH_VELOCITY = 3000.0
 #jump count
 var jump_count = 0
-var max_jumps = 2
 
 #dash count
 var dash_count = 0
@@ -43,10 +42,11 @@ func _physics_process(delta):
 	# Handle jump.
 
 	
-	if Input.is_action_just_pressed("ui_accept") and jump_count > 1 and jump_count < max_jumps:
+	if Input.is_action_just_pressed("ui_accept") and jump_count == 1:
 		velocity.y = JUMP_VELOCITY_HIGHER 
+		jump_count += 1
 
-	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps:
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and jump_count < 2:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 		
@@ -72,7 +72,7 @@ func _physics_process(delta):
 	var isLeft = velocity.x < 0
 	animated_sprite_2d.flip_h = isLeft
 
-
+#timer for dash cooldown
 func _on_timer_timeout():
 	print_debug("time")
 	dash_count = 0

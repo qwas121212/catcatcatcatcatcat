@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cypu66hrqqkex"]
+[gd_scene load_steps=31 format=3 uid="uid://cypu66hrqqkex"]
 
 [ext_resource type="Texture2D" uid="uid://bdod4sbdxxo2t" path="res://Idle (32x32).png" id="1_c5irv"]
 [ext_resource type="Texture2D" uid="uid://dcbwu4gwg5ia6" path="res://Jump (32x32).png" id="2_cnlix"]
@@ -100,6 +100,10 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("3_dwaua")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_565df"]
+atlas = ExtResource("2_cnlix")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wgiyx"]
 animations = [{
 "frames": [{
@@ -188,6 +192,14 @@ animations = [{
 "loop": true,
 "name": &"running",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_565df")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjihn"]
@@ -200,11 +212,14 @@ texture_filter = 1
 position = Vector2(154.5, 168.5)
 scale = Vector2(2.65625, 3.09375)
 sprite_frames = SubResource("SpriteFrames_wgiyx")
+animation = &"swim"
 autoplay = "default"
+frame_progress = 0.983741
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(154, 179)
 shape = SubResource("RectangleShape2D_mjihn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 position_smoothing_enabled = true

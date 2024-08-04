@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtjsw7dkfh4of"
-path="res://.godot/imported/Cherries.png-e71be6149781b6379cb0a20bba7415c5.ctex"
+uid="uid://xifpwqo8ceyl"
+path="res://.godot/imported/Jellyfish Sprite Sheet.png-f311594de1663c30ff3903c71f7a1c59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cherries.png"
-dest_files=["res://.godot/imported/Cherries.png-e71be6149781b6379cb0a20bba7415c5.ctex"]
+source_file="res://Jellyfish Sprite Sheet.png"
+dest_files=["res://.godot/imported/Jellyfish Sprite Sheet.png-f311594de1663c30ff3903c71f7a1c59.ctex"]
 
 [params]
 

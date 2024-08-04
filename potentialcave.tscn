@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cypu66hrqqkex" path="res://maincharacter.tscn" id="2_s1bv4"]
 [ext_resource type="Script" path="res://maincharacter.gd" id="3_h57qk"]
 [ext_resource type="Texture2D" uid="uid://ka58ggjf3rri" path="res://Terrain (16x16).png" id="4_lwqhf"]
-[ext_resource type="PackedScene" uid="uid://rhdnte10h5yi" path="res://checkpoint.tscn" id="5_rysyd"]
+[ext_resource type="PackedScene" uid="uid://rhdnte10h5yi" path="res://interactables/checkpoint.tscn" id="5_rysyd"]
 [ext_resource type="Texture2D" uid="uid://bn1kehky6iiia" path="res://water.png" id="7_lgdlt"]
 [ext_resource type="Script" path="res://Area2D.gd" id="7_ocrpn"]
-[ext_resource type="PackedScene" uid="uid://dgmhsiqxbwgtd" path="res://collectable_powerup.tscn" id="9_0w3ad"]
-[ext_resource type="PackedScene" uid="uid://dvfhp5oyfldmn" path="res://actual_enemy.tscn" id="10_8v1jf"]
+[ext_resource type="PackedScene" path="res://collectable_powerup.tscn" id="9_0w3ad"]
+[ext_resource type="PackedScene" uid="uid://dvfhp5oyfldmn" path="res://enemies/actual_enemy.tscn" id="10_8v1jf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qp0o"]
 texture = ExtResource("4_lwqhf")

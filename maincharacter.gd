@@ -10,7 +10,7 @@ var jump_count = 0
 
 #dash count
 var dash_count = 0
-var max_dashes = 3
+var max_dashes = 1
 
 #water
 var is_in_water : bool = false
@@ -71,11 +71,11 @@ func _physics_process(delta):
 		
 		
 	#Handle dash
-	if Input.is_action_just_pressed("dash") and dash_count < 4  and not is_on_floor():
+	if Input.is_action_just_pressed("dash") and dash_count < 2 and not is_on_floor():
 		velocity.x = DASH_VELOCITY
 		dash_count += 1
 		
-	if dash_count == 3:
+	if dash_count == 1:
 		timer.start()
 		
 		#jump in water

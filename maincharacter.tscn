@@ -203,23 +203,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjihn"]
-size = Vector2(62, 78)
+size = Vector2(32, 41)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(154.5, 168.5)
-scale = Vector2(2.65625, 3.09375)
+position = Vector2(138.5, 193)
+scale = Vector2(1.65625, 1.8125)
 sprite_frames = SubResource("SpriteFrames_wgiyx")
-animation = &"swim"
 autoplay = "default"
-frame_progress = 0.983741
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(154, 179)
+position = Vector2(139, 197.5)
 shape = SubResource("RectangleShape2D_mjihn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -400)
 anchor_mode = 0
+ignore_rotation = false
 position_smoothing_enabled = true

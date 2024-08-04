@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqt5ggn17ho3w"
-path="res://.godot/imported/BatStandard_Flying.png-2de5c05355d94bdf7dcbf6a17616324b.ctex"
+uid="uid://dg3ds6scon2sj"
+path="res://.godot/imported/2024_08_02_0xf_Kleki.png-0f6843b8cecf1d949883066e5975e69a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BatStandard_Flying.png"
-dest_files=["res://.godot/imported/BatStandard_Flying.png-2de5c05355d94bdf7dcbf6a17616324b.ctex"]
+source_file="res://cutscenes/2024_08_02_0xf_Kleki.png"
+dest_files=["res://.godot/imported/2024_08_02_0xf_Kleki.png-0f6843b8cecf1d949883066e5975e69a.ctex"]
 
 [params]
 
